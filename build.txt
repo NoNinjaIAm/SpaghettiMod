@@ -1,0 +1,3 @@
+displayName = SpaghettiMod
+author = NoNinjaIAm
+version = 0.1

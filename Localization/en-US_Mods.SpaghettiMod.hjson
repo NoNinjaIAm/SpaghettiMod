@@ -1,0 +1,28 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	GarganelliSword: {
+		DisplayName: Garganelli Greatsword
+		Tooltip: mmmm Spaghet
+	}
+
+	MeatballCanon: {
+		DisplayName: Meatball Canon
+		Tooltip: ""
+	}
+
+	Meatball: {
+		DisplayName: Meatball
+		Tooltip: ""
+	}
+
+	Tomato: {
+		DisplayName: Tomato
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	Meatball.DisplayName: Meatball
+	MeatballProj.DisplayName: Meatball Proj
+}
