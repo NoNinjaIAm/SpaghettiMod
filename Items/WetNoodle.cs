@@ -1,10 +1,10 @@
-﻿using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace SpaghettiMod.Items
 {
-    internal class Tomato : ModItem
+    internal class WetNoodle : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -14,7 +14,7 @@ namespace SpaghettiMod.Items
         public override void SetDefaults()
         {
             Item.width = 16;
-            Item.height = 16;
+            Item.height = 15;
             Item.maxStack = Item.CommonMaxStack;
             Item.value = 10;
             Item.rare = ItemRarityID.Green;

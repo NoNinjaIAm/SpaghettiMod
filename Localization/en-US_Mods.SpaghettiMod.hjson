@@ -20,6 +20,11 @@ Items: {
 		DisplayName: Tomato
 		Tooltip: ""
 	}
+
+	WetNoodle: {
+		DisplayName: Wet Noodle
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
