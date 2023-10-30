@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using SpaghettiMod.DamageClasses;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,7 +15,7 @@ namespace SpaghettiMod.Items
         public override void SetDefaults()
         {
             Item.damage = 12; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = ModContent.GetInstance<MeatballDamageClass>();
             Item.width = 16;
             Item.height = 16;
             Item.maxStack = Item.CommonMaxStack;
