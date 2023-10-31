@@ -1,4 +1,5 @@
-﻿using SpaghettiMod.DamageClasses;
+﻿using SpaghettiMod.Buffs;
+using SpaghettiMod.DamageClasses;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -37,6 +38,12 @@ namespace SpaghettiMod.Items
 
 
         }
+
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone) {
+			// These effects act on a hit happening, so they should go here.
+			// Buffs added locally are automatically synced to the server and other players in multiplayer
+			target.AddBuff(ModContent.BuffType<MarinatedDebuff>(), 600);
+		}
 
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()
