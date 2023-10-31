@@ -40,17 +40,22 @@ namespace SpaghettiMod.Projectiles
 
         public override void OnKill(int timeLeft)
         {
+            // Meatball Destory Dust
             base.OnKill(timeLeft);
             Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Brown, 3f);
             Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.1f, 150, Color.Brown, 2f);
             Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.3f, Projectile.velocity.Y * 0.3f, 150, Color.Red, 2.3f);
-            
-            // CHANGE SOUND
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.1f, 150, Color.Brown, 2.6f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.4f, 150, Color.Brown, 1.6f);
+
+
+            // Sound Plays
             Terraria.Audio.SoundEngine.PlaySound(SoundID.Item167, Projectile.position);
         }
 
         public override void PostAI()
         {
+            // Gravity
             base.PostAI();
             Projectile.velocity.Y = Projectile.velocity.Y + 0.1f; // 0.1f for arrow gravity, 0.4f for knife gravity
             if (Projectile.velocity.Y > 16f) // This check implements "terminal velocity". We don't want the projectile to keep getting faster and faster. Past 16f this projectile will travel through blocks, so this check is useful.
@@ -58,6 +63,18 @@ namespace SpaghettiMod.Projectiles
                 Projectile.velocity.Y = 16f;
             }
         }
+
+        public override void AI()
+        {
+            // This is here to make a trail as the meatball is fired.
+            int choice = Main.rand.Next(5);
+
+            if(choice == 0)
+            {
+                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 125, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Red, 1.3f);
+            }
+        }
+
     }
 
     
