@@ -7,6 +7,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using SpaghettiMod.DamageClasses;
+using SpaghettiMod.Buffs;
 
 namespace SpaghettiMod.Projectiles
 {
@@ -37,6 +38,12 @@ namespace SpaghettiMod.Projectiles
 
             AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         }
+
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damage) {
+			// These effects act on a hit happening, so they should go here.
+			// Buffs added locally are automatically synced to the server and other players in multiplayer
+			target.AddBuff(ModContent.BuffType<MarinatedDebuff>(), 600);
+		}
 
         public override void OnKill(int timeLeft)
         {

@@ -1,4 +1,3 @@
-
 using Terraria;
 using Terraria.ModLoader;
 
@@ -8,7 +7,7 @@ namespace SpaghettiMod.Buffs
 	{
 
 		public override void Update(NPC npc, ref int buffIndex) {
-			npc.alpha = 200;
+			npc.lifeRegen -= 50;
 		}
 
 	}

@@ -31,3 +31,10 @@ Projectiles: {
 	Meatball.DisplayName: Meatball
 	MeatballProj.DisplayName: Meatball Proj
 }
+
+Buffs: {
+	MarinatedDebuff: {
+		DisplayName: Marinated Debuff
+		Description: Mods.SpaghettiMod.Buffs.MarinatedDebuff.Description
+	}
+}
