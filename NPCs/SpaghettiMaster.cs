@@ -100,7 +100,7 @@ namespace SpaghettiMod.NPCs
 			NPC.DeathSound = SoundID.NPCDeath1;
 			NPC.knockBackResist = 0.5f;
 
-			AnimationType = NPCID.Guide;
+			AnimationType = NPCID.Golfer;
 		}
 
 		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
@@ -214,7 +214,7 @@ namespace SpaghettiMod.NPCs
 			};
 		}
 
-		public override void FindFrame(int frameHeight) {
+		//public override void FindFrame(int frameHeight) {
 			/*npc.frame.Width = 40;
 			if (((int)Main.time / 10) % 2 == 0)
 			{
@@ -224,7 +224,7 @@ namespace SpaghettiMod.NPCs
 			{
 				npc.frame.X = 0;
 			}*/
-		}
+		//}
 
         // N: FIX ME (NEED TO ADD MY OWN DIALOUGE)
 		public override string GetChat() {
@@ -235,7 +235,7 @@ namespace SpaghettiMod.NPCs
 				// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.PartyGirlDialogue", Main.npc[partyGirl].GivenName));
 			// }
 			// These are things that the NPC has a chance of telling you when you talk to it.
-			chat.Add(Language.GetTextValue("Mods.SpaghettiMod.NPCs.SpaghettiMaster.Dialogue.Standard1"));
+			chat.Add(Language.GetTextValue("Dialogue.SpaghettiMaster.StandardDialogue1"));
 			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue2"));
 			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue3"));
 			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue4"));
@@ -290,27 +290,28 @@ namespace SpaghettiMod.NPCs
 			}
 		}*/
 
-		// Not completely finished, but below is what the NPC will sell
-		public override void AddShops() {
-			var npcShop = new NPCShop(NPC.type, ShopName)
-				.Add<Meatball>()
-				//.Add<EquipMaterial>()
-				//.Add<BossItem>()
-				.Add(new Item(ModContent.ItemType<Meatball>()) { shopCustomPrice = Item.buyPrice(gold: 1) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
-				.Add<WetNoodle>();
-				
-                // N: NOTE: Leaving this code here as commented for possible future reference
-				/*
-				.Add<Items.Weapons.ExampleSword>(Condition.MoonPhasesQuarter0)
-				//.Add<ExampleGun>(Condition.MoonPhasesQuarter1)
-				.Add<Items.Ammo.ExampleBullet>(Condition.MoonPhasesQuarter1)
-				//.Add<ExampleStaff>(Condition.MoonPhasesQuarter2)
-				.Add<ExampleOnBuyItem>()
-				.Add<Items.Weapons.ExampleYoyo>(Condition.IsNpcShimmered); // Let's sell an yoyo if this NPC is shimmered!*/
-
-			npcShop.Register(); // Name of this shop tab
+		public override void SetChatButtons(ref string button, ref string button2) { // What the chat buttons are when you open up the chat UI
+			button = Language.GetTextValue("LegacyInterface.28"); //This is the key to the word "Shop"
 		}
 
+		public override void OnChatButtonClicked(bool firstButton, ref string shop) {
+			if (firstButton) {
+				shop = "Shop";
+			}
+		}
+
+		// Not completely finished, but below is what the NPC will sell
+		public override void AddShops() {
+			new NPCShop(Type)
+				.Add(new Item(ModContent.ItemType<Meatball>()) { shopCustomPrice = Item.buyPrice(gold: 1) }) // This example sets a custom price, ExampleNPCShop.cs has more info on custom prices and currency. 
+				.Add(new Item(ModContent.ItemType<Tomato>()) { shopCustomPrice = Item.buyPrice(silver: 50) })
+				.Add(new Item(ModContent.ItemType<WetNoodle>()) { shopCustomPrice = Item.buyPrice(silver: 10) })
+				.Register();
+				
+		}
+
+		// N: Commenging out until I make a shimmer varient
+		/* 
 		public override void ModifyActiveShop(string shopName, Item[] items) {
 			foreach (Item item in items) {
 				// Skip 'air' items and null items.
@@ -319,21 +320,22 @@ namespace SpaghettiMod.NPCs
 				}
 
 				// If NPC is shimmered then reduce all prices by 50%.
-                /*
+                
 				if (NPC.IsShimmerVariant) {
 					int value = item.shopCustomPrice ?? item.value;
 					item.shopCustomPrice = value / 2;
-				}*/
+				}
 			}
-		}
+		}*/
 
 
 		// Make this Town NPC teleport to the King and/or Queen statue when triggered. Return toKingStatue for only King Statues. Return !toKingStatue for only Queen Statues. Return true for both.
-		public override bool CanGoToStatue(bool toKingStatue) => true;
+		// N: I honestly dont know what this code below means so I won't delete it lolol
+		/*public override bool CanGoToStatue(bool toKingStatue) => true;
 
-        // N: I honestly dont know what this code below means so I won't delete it lolol
+        
 		// Make something happen when the npc teleports to a statue. Since this method only runs server side, any visual effects like dusts or gores have to be synced across all clients manually.
-        /*public override void OnGoToStatue(bool toKingStatue) {
+        public override void OnGoToStatue(bool toKingStatue) {
 			if (Main.netMode == NetmodeID.Server) {
 				ModPacket packet = Mod.GetPacket();
 				packet.Write((byte)ExampleMod.MessageType.ExampleTeleportToStatue);

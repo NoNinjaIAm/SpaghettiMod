@@ -40,28 +40,6 @@ Buffs: {
 }
 
 NPCs: {
-	FreddyTheSpaghettiMaster: {
-		DisplayName: Freddy The Spaghetti Master
-
-		TownNPCMood: {
-			Content: I am content.
-			NoHome: I hate not having a home.
-			FarFromHome: I am too far from home.
-			LoveSpace: I love having so much space.
-			DislikeCrowded: I dislike how crowded I am.
-			HateCrowded: I hate how crowded I am.
-			LoveBiome: I love {BiomeName}.
-			LikeBiome: I like {BiomeName}.
-			DislikeBiome: I dislike {BiomeName}.
-			LoveNPC: I love {NPCName}.
-			LikeNPC: I like {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
-			LikeNPC_Princess: I like {NPCName}.
-			Princess_LovesNPC: I like {NPCName}.
-		}
-	}
-
 	SpaghettiMaster: {
 		DisplayName: Spaghetti Master
 
@@ -82,5 +60,13 @@ NPCs: {
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}
+	}
+}
+
+Dialogue: {
+	SpaghettiMaster: {
+		StandardDialogue1: Sometimes I feel like I'm different from everyone else here.
+		StandardDialogue2: What's your favorite color? My favorite colors are white and black.
+		StandardDialogue3: What? I don't have any arms or legs? Oh, don't be ridiculous!
 	}
 }
