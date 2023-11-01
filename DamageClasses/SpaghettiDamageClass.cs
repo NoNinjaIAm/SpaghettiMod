@@ -1,15 +1,21 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.CodeAnalysis.Classification;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace SpaghettiMod.DamageClasses
 {
-    public class MeatballDamageClass : DamageClass
+    public class SpaghettiDamageClass : DamageClass
     {
         // This is an example damage class designed to demonstrate all the current functionality of the feature and explain how to create one of your own, should you need one.
-		// For information about how to apply stat bonuses to specific damage classes, please instead refer to ExampleMod/Content/Items/Accessories/ExampleStatBonusAccessory.
-		public override StatInheritanceData GetModifierInheritance(DamageClass damageClass) {
+        // For information about how to apply stat bonuses to specific damage classes, please instead refer to ExampleMod/Content/Items/Accessories/ExampleStatBonusAccessory.
+        public override void SetStaticDefaults()
+        {
+            base.SetStaticDefaults();
+			
+        }
+        public override StatInheritanceData GetModifierInheritance(DamageClass damageClass) {
 			// This method lets you make your damage class benefit from other classes' stat bonuses by default, as well as universal stat bonuses.
 			// To briefly summarize the two nonstandard damage class names used by DamageClass:
 			// Default is, you guessed it, the default damage class. It doesn't scale off of any class-specific stat bonuses or universal stat bonuses.
@@ -71,8 +77,8 @@ namespace SpaghettiMod.DamageClasses
 		public override void SetDefaultStats(Player player) {
 			// This method lets you set default statistical modifiers for your example damage class.
 			// Here, we'll make our example damage class have more critical strike chance and armor penetration than normal.
-			player.GetCritChance<MeatballDamageClass>() += 4;
-			player.GetArmorPenetration<MeatballDamageClass>() += 10;
+			player.GetCritChance<SpaghettiDamageClass>() += 4;
+			player.GetArmorPenetration<SpaghettiDamageClass>() += 10;
 			// These sorts of modifiers also exist for damage (GetDamage), knockback (GetKnockback), and attack speed (GetAttackSpeed).
 			// You'll see these used all around in reference to vanilla classes and our example class here. Familiarize yourself with them.
 		}

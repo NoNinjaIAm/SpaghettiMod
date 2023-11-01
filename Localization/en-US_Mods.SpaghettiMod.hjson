@@ -1,4 +1,5 @@
 # This file will automatically update with entries for new content after a build and reload
+DamageClasses.SpaghettiDamageClass.DisplayName: spaghetti damage
 
 Items: {
 	GarganelliSword: {
@@ -18,7 +19,7 @@ Items: {
 
 	Tomato: {
 		DisplayName: Tomato
-		Tooltip: ""
+		Tooltip: Gives Marinated Debuff
 	}
 
 	WetNoodle: {
@@ -30,6 +31,7 @@ Items: {
 Projectiles: {
 	Meatball.DisplayName: Meatball
 	MeatballProj.DisplayName: Meatball Proj
+	TomatoProj.DisplayName: Tomato Proj
 }
 
 Buffs: {

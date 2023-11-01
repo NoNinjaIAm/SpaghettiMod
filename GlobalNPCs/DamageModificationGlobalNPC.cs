@@ -16,7 +16,7 @@ namespace SpaghettiMod.GlobalNPCs
 		}
 
 		public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers) {
-			if (marinatedDebuff && modifiers.DamageType == ModContent.GetInstance<MeatballDamageClass>()) {
+			if (marinatedDebuff && modifiers.DamageType == ModContent.GetInstance<SpaghettiDamageClass>()) {
 				// The if statement checks if the debuff is on the enemy and if the incoming damage is meatball damage
 				modifiers.SourceDamage *= MarinatedDebuff.DamageMultiplier;
 				// The source damage is multiplied by the damage multiplier located in the marinated debuff

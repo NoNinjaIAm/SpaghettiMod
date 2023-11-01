@@ -1,9 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.Audio;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using SpaghettiMod.DamageClasses;
@@ -12,7 +8,7 @@ using SpaghettiMod.Buffs;
 namespace SpaghettiMod.Projectiles
 {
 
-    public class MeatballProj : ModProjectile
+    public class TomatoProj : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -23,7 +19,7 @@ namespace SpaghettiMod.Projectiles
         {
             Projectile.width = 12; // The width of projectile hitbox
             Projectile.height = 12; // The height of projectile hitbox
-            Projectile.scale = 1.7f;
+            Projectile.scale = 0.7f;
             Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
             Projectile.friendly = true; // Can the projectile deal damage to enemies?
             Projectile.hostile = false; // Can the projectile deal damage to the player?
@@ -39,19 +35,26 @@ namespace SpaghettiMod.Projectiles
             AIType = ProjectileID.Bullet; // Act exactly like default Bullet
         }
 
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damage) {
+			// These effects act on a hit happening, so they should go here.
+			// Buffs added locally are automatically synced to the server and other players in multiplayer
+			target.AddBuff(ModContent.BuffType<MarinatedDebuff>(), 600);
+		}
+
         public override void OnKill(int timeLeft)
         {
             // Meatball Destory Dust
             base.OnKill(timeLeft);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Brown, 3f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.1f, 150, Color.Brown, 2f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.3f, Projectile.velocity.Y * 0.3f, 150, Color.Red, 2.3f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.1f, 150, Color.Brown, 2.6f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.4f, 150, Color.Brown, 1.6f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Tomato, 1.5f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.3f, Projectile.velocity.Y * 0.3f, 150, Color.Orange, 1.1f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1.3f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.4f, 150, Color.Orange, 0.8f);
 
 
             // Sound Plays
-            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item167, Projectile.position);
+            Terraria.Audio.SoundEngine.PlaySound(SoundID.NPCHit18, Projectile.position);
+            Terraria.Audio.SoundEngine.PlaySound(SoundID.NPCDeath32, Projectile.position);
         }
 
         public override void PostAI()
@@ -72,7 +75,7 @@ namespace SpaghettiMod.Projectiles
 
             if(choice == 0)
             {
-                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 125, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Red, 1.3f);
+                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 125, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Orange, 1f);
             }
         }
 
@@ -80,4 +83,3 @@ namespace SpaghettiMod.Projectiles
 
     
 }
-
