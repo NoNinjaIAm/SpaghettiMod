@@ -11,6 +11,7 @@ namespace SpaghettiMod.Buffs
 
 		public override void Update(NPC npc, ref int buffIndex) {
 			npc.GetGlobalNPC<DamageModificationGlobalNPC>().marinatedDebuff = true;
+			//gives the npc the marinated debuff
 		}
 
 	}
