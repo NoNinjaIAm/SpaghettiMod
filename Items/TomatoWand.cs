@@ -4,6 +4,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Enums;
+using Terraria.Localization;
+using System.Collections.Generic;
 
 namespace SpaghettiMod.Items
 {
@@ -40,5 +42,6 @@ namespace SpaghettiMod.Items
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
 		}
-	}
+
+    }
 }

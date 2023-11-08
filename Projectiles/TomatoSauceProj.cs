@@ -46,8 +46,8 @@ namespace SpaghettiMod.Projectiles
         {
             // Destory Dust
             base.OnKill(timeLeft);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Tomato, 1.5f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Tomato, 1.5f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1f);
             Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.3f, Projectile.velocity.Y * 0.3f, 150, Color.Orange, 1.1f);
             Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1.3f);
             Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.4f, 150, Color.Orange, 0.8f);
@@ -72,13 +72,17 @@ namespace SpaghettiMod.Projectiles
         public override void AI()
         {
             // This is here to make a trail as the meatball is fired.
-            int choice = Main.rand.Next(1);
+            int choice = Main.rand.Next(5);
             Projectile.velocity.Y += Projectile.ai[0];
             if(choice == 0)
             {
-                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height/2, DustID.BloodWater, Projectile.velocity.X , Projectile.velocity.Y, 150, Color.Red, 1f);
-                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height/2, DustID.BloodWater, Projectile.velocity.X , Projectile.velocity.Y, 150, Color.Red, 1f);
-                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height/2, DustID.BloodWater, Projectile.velocity.X , Projectile.velocity.Y, 150, Color.Black, 1f);
+                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height/2, DustID.Mud, Projectile.velocity.X/2 , Projectile.velocity.Y/2, 150, Color.Red, 1.5f);
+            }
+            else
+            {
+                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height/2, DustID.BloodWater, Projectile.velocity.X , Projectile.velocity.Y, 150, Color.Red, 2f);
+                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height/2, DustID.BloodWater, Projectile.velocity.X , Projectile.velocity.Y, 150, Color.Red, 2f);
+                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height/2, DustID.BloodWater, Projectile.velocity.X , Projectile.velocity.Y, 150, Color.Black, 2f);
             }
         }
 
