@@ -72,7 +72,7 @@ namespace SpaghettiMod.Projectiles
 
             if(choice == 0)
             {
-                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, 125, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Red, 1.3f);
+                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.CrimsonPlants, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Red, 1.3f);
             }
         }
 

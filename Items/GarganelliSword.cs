@@ -16,10 +16,10 @@ namespace SpaghettiMod.Items
 			Item.height = 30;
 			Item.useTime = 35;
 			Item.useAnimation = 35;
-			Item.useStyle = 1;
+			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 6;
 			Item.value = 10000;
-			Item.rare = 3;
+			Item.rare = ItemRarityID.Orange;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
         }
