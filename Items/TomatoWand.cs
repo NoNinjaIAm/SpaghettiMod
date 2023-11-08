@@ -18,7 +18,7 @@ namespace SpaghettiMod.Items
 		public override void SetDefaults() {
 			// DefaultToStaff handles setting various Item values that magic staff weapons use.
 			// Hover over DefaultToStaff in Visual Studio to read the documentation!
-			Item.DefaultToStaff(ModContent.ProjectileType<TomatoSauceProj>(), 16, 1, 1);
+			Item.DefaultToStaff(ModContent.ProjectileType<TomatoSauceProj>(), 16, 10, 5);
 
 			// Customize the UseSound. DefaultToStaff sets UseSound to SoundID.Item43, but we want SoundID.Item20
 			Item.UseSound = SoundID.Item20;
