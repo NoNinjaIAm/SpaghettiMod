@@ -8,7 +8,7 @@ using SpaghettiMod.Buffs;
 namespace SpaghettiMod.Projectiles
 {
 
-    public class TomatoProj : ModProjectile
+    public class TomatoSauceProj : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -17,8 +17,8 @@ namespace SpaghettiMod.Projectiles
         }
         public override void SetDefaults()
         {
-            Projectile.width = 12; // The width of projectile hitbox
-            Projectile.height = 12; // The height of projectile hitbox
+            Projectile.width = 1; // The width of projectile hitbox
+            Projectile.height = 1; // The height of projectile hitbox
             Projectile.scale = 0.7f;
             Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
             Projectile.friendly = true; // Can the projectile deal damage to enemies?
@@ -45,11 +45,11 @@ namespace SpaghettiMod.Projectiles
         {
             // Meatball Destory Dust
             base.OnKill(timeLeft);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Tomato, 1.5f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.3f, Projectile.velocity.Y * 0.3f, 150, Color.Orange, 1.1f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1.3f);
-            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.SnowBlock, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.4f, 150, Color.Orange, 0.8f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Tomato, 1.5f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.3f, Projectile.velocity.Y * 0.3f, 150, Color.Orange, 1.1f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.4f, Projectile.velocity.Y * 0.1f, 150, Color.OrangeRed, 1.3f);
+            Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.BloodWater, Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.4f, 150, Color.Orange, 0.8f);
 
 
             // Sound Plays
@@ -71,11 +71,11 @@ namespace SpaghettiMod.Projectiles
         public override void AI()
         {
             // This is here to make a trail as the meatball is fired.
-            int choice = Main.rand.Next(5);
+            int choice = Main.rand.Next(2);
 
             if(choice == 0)
             {
-                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.CrimsonPlants, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Orange, 1f);
+                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.RuneWizard, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Red, 1f);
             }
         }
 

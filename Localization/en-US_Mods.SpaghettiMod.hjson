@@ -37,6 +37,7 @@ Projectiles: {
 	Meatball.DisplayName: Meatball
 	MeatballProj.DisplayName: Meatball Proj
 	TomatoProj.DisplayName: Tomato Proj
+	TomatoSauceProj.DisplayName: Tomato Sauce Proj
 }
 
 Buffs: {
