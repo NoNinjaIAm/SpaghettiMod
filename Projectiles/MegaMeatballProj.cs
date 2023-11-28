@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
@@ -8,11 +8,13 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using SpaghettiMod.DamageClasses;
 using SpaghettiMod.Buffs;
+using Terraria.DataStructures;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SpaghettiMod.Projectiles
 {
 
-    public class MeatballProj : ModProjectile
+    public class MegaMeatballProj : ModProjectile
     {
         public override void SetStaticDefaults()
         {
@@ -23,7 +25,7 @@ namespace SpaghettiMod.Projectiles
         {
             Projectile.width = 12; // The width of projectile hitbox
             Projectile.height = 12; // The height of projectile hitbox
-            Projectile.scale = 1.7f;
+            Projectile.scale = 2.8f;
             Projectile.aiStyle = 1; // The ai style of the projectile, please reference the source code of Terraria
             Projectile.friendly = true; // Can the projectile deal damage to enemies?
             Projectile.hostile = false; // Can the projectile deal damage to the player?
@@ -36,7 +38,7 @@ namespace SpaghettiMod.Projectiles
             Projectile.tileCollide = true; // Can the projectile collide with tiles?
             Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
 
-            AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+            AIType = ProjectileID.Bullet; // Act exactly like a boulder
         }
 
         public override void OnKill(int timeLeft)
@@ -51,7 +53,19 @@ namespace SpaghettiMod.Projectiles
 
 
             // Sound Plays
+            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
             Terraria.Audio.SoundEngine.PlaySound(SoundID.Item167, Projectile.position);
+
+            // Spawn Meatballs when destroyed
+            // Note: I Honestly have no idea what GetSource_FromThis() means but it works for now. Assume future problems may stem from this.
+            for(int i = 0; i < 5; i++)
+            {
+                // Create a new velocity vector with a random offset
+                Vector2 velocityOffset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21)), newVector = Vector2.Add(velocityOffset, Projectile.velocity);
+
+                // Shoot Projectile
+                Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, (newVector * -1) * 0.2f, ModContent.ProjectileType<MeatballProj>(), 20, 0.1f, Main.myPlayer);
+            }
             
         }
 
@@ -59,21 +73,22 @@ namespace SpaghettiMod.Projectiles
         {
             // Gravity
             base.PostAI();
-            Projectile.velocity.Y = Projectile.velocity.Y + 0.05f; // 0.1f for arrow gravity, 0.4f for knife gravity
+            Projectile.velocity.Y = Projectile.velocity.Y + 0.1f; // 0.1f for arrow gravity, 0.4f for knife gravity
             if (Projectile.velocity.Y > 16f) // This check implements "terminal velocity". We don't want the projectile to keep getting faster and faster. Past 16f this projectile will travel through blocks, so this check is useful.
             {
                 Projectile.velocity.Y = 16f;
             }
+            Projectile.rotation = Projectile.rotation * 4f;
         }
 
         public override void AI()
         {
             // This is here to make a trail as the meatball is fired.
-            int choice = Main.rand.Next(5);
+            int choice = Main.rand.Next(15);
 
             if(choice == 0)
             {
-                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.CrimsonPlants, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.Red, 1.3f);
+                Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.CrimsonPlants, Projectile.velocity.X * 0.25f, Projectile.velocity.Y * 0.25f, 150, Color.RosyBrown, 3f);
             }
 
         }
@@ -82,4 +97,3 @@ namespace SpaghettiMod.Projectiles
 
     
 }
-

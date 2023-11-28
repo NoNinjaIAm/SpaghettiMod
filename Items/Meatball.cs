@@ -14,7 +14,7 @@ namespace SpaghettiMod.Items
 
         public override void SetDefaults()
         {
-            Item.damage = 12; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
+            Item.damage = 6; // The damage for projectiles isn't actually 12, it actually is the damage combined with the projectile and the item together.
             Item.DamageType = ModContent.GetInstance<SpaghettiDamageClass>();
             Item.width = 16;
             Item.height = 16;
