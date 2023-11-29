@@ -9,27 +9,47 @@ Items: {
 
 	MeatballCanon: {
 		DisplayName: Meatball Canon
-		Tooltip: ""
+		Tooltip: A canon that shoots meatballs
 	}
 
 	Meatball: {
 		DisplayName: Meatball
-		Tooltip: ""
+		Tooltip: Tasty and extremly dangerous
 	}
 
 	Tomato: {
 		DisplayName: Tomato
-		Tooltip: Gives Marinated Debuff
+		Tooltip: Gives marinated debuff
 	}
 
 	WetNoodle: {
-		Tooltip: ""
+		Tooltip: Exactly what it sounds like
 		DisplayName: Wet Noodle
 	}
 
 	TomatoWand: {
-		Tooltip: ""
+		Tooltip: Makes enemies marinated
 		DisplayName: Tomato Wand
+	}
+
+	MegaMeatball: {
+		DisplayName: Mega Meatball
+		Tooltip: Large and Dangerous Ammunition
+	}
+
+	WetNoodlePickaxe: {
+		DisplayName: Wet Noodle Pickaxe
+		Tooltip: Why?
+	}
+
+	BakedSpaghettiPickaxe: {
+		DisplayName: Baked Spaghetti Pickaxe
+		Tooltip: ""
+	}
+
+	MegaMeatballCanon: {
+		DisplayName: Mega Meatball Canon
+		Tooltip: ""
 	}
 }
 
@@ -38,6 +58,7 @@ Projectiles: {
 	MeatballProj.DisplayName: Meatball Proj
 	TomatoProj.DisplayName: Tomato Proj
 	TomatoSauceProj.DisplayName: Tomato Sauce Proj
+	MegaMeatballProj.DisplayName: Mega Meatball Proj
 }
 
 Buffs: {
@@ -52,19 +73,19 @@ NPCs: {
 		DisplayName: Spaghetti Master
 
 		TownNPCMood: {
-			Content: I am content.
-			NoHome: I hate not having a home.
-			FarFromHome: I am too far from home.
-			LoveSpace: I love having so much space.
-			DislikeCrowded: I dislike how crowded I am.
-			HateCrowded: I hate how crowded I am.
-			LoveBiome: I love {BiomeName}.
-			LikeBiome: I like {BiomeName}.
-			DislikeBiome: I dislike {BiomeName}.
-			LoveNPC: I love {NPCName}.
-			LikeNPC: I like {NPCName}.
-			DislikeNPC: I dislike {NPCName}.
-			HateNPC: I hate {NPCName}.
+			Content: No complaints here.
+			NoHome: Homeless again.
+			FarFromHome: I miss my house.
+			LoveSpace: I love the extra space. More space means more room for spaghetti mastery.
+			DislikeCrowded: I'm shoulder to shoulder here.
+			HateCrowded: I'm gonna murder someone if I don't get some personal space.
+			LoveBiome: I love {BiomeName}, it's possibly the best place for my needs.
+			LikeBiome: I'm fond of {BiomeName}, spaghetti curation works well here.
+			DislikeBiome: I dislike {BiomeName}, brings back some unpleasent memories.
+			LoveNPC: I love {NPCName}, they have a passion for spaghet rivaled only by my own.
+			LikeNPC: I find {NPCName} extremly amusing.
+			DislikeNPC: I don't like {NPCName}, they continues to harass me.
+			HateNPC: I despise {NPCName}, they know far too much about me.
 			LikeNPC_Princess: I like {NPCName}.
 			Princess_LovesNPC: I like {NPCName}.
 		}

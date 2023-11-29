@@ -21,7 +21,7 @@ using Terraria.Utilities;
 
 namespace SpaghettiMod.NPCs
 {
-	// [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
+	// [AutoloadHead] and NPC.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all. Golfer Animations
 	[AutoloadHead]
 	public class SpaghettiMaster : ModNPC
 	{
@@ -38,10 +38,10 @@ namespace SpaghettiMod.NPCs
 		}*/
 
 		public override void SetStaticDefaults() {
-			Main.npcFrameCount[Type] = 25; // The total amount of frames the NPC has
+			Main.npcFrameCount[Type] = 26; // The total amount of frames the NPC has
 
-			NPCID.Sets.ExtraFramesCount[Type] = 9; // Generally for Town NPCs, but this is how the NPC does extra things such as sitting in a chair and talking to other NPCs. This is the remaining frames after the walking frames.
-			NPCID.Sets.AttackFrameCount[Type] = 4; // The amount of frames in the attacking animation.
+			//NPCID.Sets.ExtraFramesCount[Type] = 9; // Generally for Town NPCs, but this is how the NPC does extra things such as sitting in a chair and talking to other NPCs. This is the remaining frames after the walking frames.
+			//NPCID.Sets.AttackFrameCount[Type] = 4; // The amount of frames in the attacking animation.
 			NPCID.Sets.DangerDetectRange[Type] = 700; // The amount of pixels away from the center of the NPC that it tries to attack enemies.
 			NPCID.Sets.AttackType[Type] = 0; // The type of attack the Town NPC performs. 0 = throwing, 1 = shooting, 2 = magic, 3 = melee
 			NPCID.Sets.AttackTime[Type] = 90; // The amount of time it takes for the NPC's attack animation to be over once it starts.
@@ -235,7 +235,7 @@ namespace SpaghettiMod.NPCs
 				// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.PartyGirlDialogue", Main.npc[partyGirl].GivenName));
 			// }
 			// These are things that the NPC has a chance of telling you when you talk to it.
-			chat.Add(Language.GetTextValue("Dialogue.SpaghettiMaster.StandardDialogue1"));
+			chat.Add("MMMMMMMMMMMMMMMMMMMMM Spaghet");
 			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue2"));
 			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue3"));
 			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue4"));
@@ -245,7 +245,7 @@ namespace SpaghettiMod.NPCs
 			NumberOfTimesTalkedTo++;
 			if (NumberOfTimesTalkedTo >= 10) {
 				//This counter is linked to a single instance of the NPC, so if ExamplePerson is killed, the counter will reset.
-				chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.TalkALot"));
+				chat.Add("Stop talking to me :)");
 			}
 
 			string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
