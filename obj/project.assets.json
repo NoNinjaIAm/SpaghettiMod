@@ -31,24 +31,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maxyo\\.nuget\\packages\\": {}
+    "C:\\Users\\nicho\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxyo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SpaghettiMod\\SpaghettiMod.csproj",
+      "projectUniqueName": "C:\\Users\\nicho\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SpaghettiMod\\SpaghettiMod.csproj",
       "projectName": "SpaghettiMod",
-      "projectPath": "C:\\Users\\maxyo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SpaghettiMod\\SpaghettiMod.csproj",
-      "packagesPath": "C:\\Users\\maxyo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxyo\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SpaghettiMod\\obj\\",
+      "projectPath": "C:\\Users\\nicho\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SpaghettiMod\\SpaghettiMod.csproj",
+      "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nicho\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SpaghettiMod\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maxyo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -88,7 +90,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
