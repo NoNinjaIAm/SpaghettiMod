@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "C66qapMlh57qPtp/QhXrLahqUCShI5SE0rM/lJuBmoK24MaLUFA9xzAhPrKiYPeSvFQcg1Kuk1R9iBeuP9vdvQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nicho\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SpaghettiMod\\SpaghettiMod.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nicho\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

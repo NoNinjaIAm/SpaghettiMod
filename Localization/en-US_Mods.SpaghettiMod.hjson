@@ -51,6 +51,16 @@ Items: {
 		DisplayName: Mega Meatball Canon
 		Tooltip: ""
 	}
+
+	WetNoodleSword: {
+		DisplayName: Wet Noodle Sword
+		Tooltip: ""
+	}
+
+	PastaBible: {
+		DisplayName: Pasta Bible
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -59,6 +69,8 @@ Projectiles: {
 	TomatoProj.DisplayName: Tomato Proj
 	TomatoSauceProj.DisplayName: Tomato Sauce Proj
 	MegaMeatballProj.DisplayName: Mega Meatball Proj
+	WetWaterProj.DisplayName: Wet Water Proj
+	MagicBibleBallProj.DisplayName: Magic Bible Ball
 }
 
 Buffs: {
@@ -90,12 +102,15 @@ NPCs: {
 			Princess_LovesNPC: I like {NPCName}.
 		}
 	}
+
+	SpaghettiFiend.DisplayName: Spaghetti Fiend
 }
 
 Dialogue: {
 	SpaghettiMaster: {
-		StandardDialogue1: Sometimes I feel like I'm different from everyone else here.
-		StandardDialogue2: What's your favorite color? My favorite colors are white and black.
-		StandardDialogue3: What? I don't have any arms or legs? Oh, don't be ridiculous!
+		StandardDialogue1: The sacred art of spaghetti-cultivation is not to be taken lightly by mortal beings.
+		StandardDialogue2: Want some killer spaghetti? Or spaghetti that kills?
+		StandardDialogue3: I know how you're gonna die. Don't worry it will only be extremly painful.
+		AnnoyedDialogue: You sure love talking huh? Well I don't.
 	}
 }

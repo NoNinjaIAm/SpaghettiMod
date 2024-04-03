@@ -235,17 +235,15 @@ namespace SpaghettiMod.NPCs
 				// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.PartyGirlDialogue", Main.npc[partyGirl].GivenName));
 			// }
 			// These are things that the NPC has a chance of telling you when you talk to it.
-			chat.Add("MMMMMMMMMMMMMMMMMMMMM Spaghet");
-			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue2"));
-			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue3"));
-			// chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue4"));
-			//chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.CommonDialogue"), 5.0);
-			//chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.RareDialogue"), 0.1);
+			// chat.Add("MMMMMMMMMMMMMMMMMMMMM Spaghet");
+			chat.Add(Language.GetTextValue("Mods.SpaghettiMod.Dialogue.SpaghettiMaster.StandardDialogue1"));
+			chat.Add(Language.GetTextValue("Mods.SpaghettiMod.Dialogue.SpaghettiMaster.StandardDialogue2"));
+			chat.Add(Language.GetTextValue("Mods.SpaghettiMod.Dialogue.SpaghettiMaster.StandardDialogue3"));
 
 			NumberOfTimesTalkedTo++;
 			if (NumberOfTimesTalkedTo >= 10) {
 				//This counter is linked to a single instance of the NPC, so if ExamplePerson is killed, the counter will reset.
-				chat.Add("Stop talking to me :)");
+				chat.Add(Language.GetTextValue("Mods.SpaghettiMod.Dialogue.SpaghettiMaster.AnnoyedDialogue"));
 			}
 
 			string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
